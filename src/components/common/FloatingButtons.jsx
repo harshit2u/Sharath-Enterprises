@@ -13,19 +13,15 @@ const FloatingButtons = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 style={{
-                    position: 'fixed',
-                    bottom: '30px',
-                    right: '30px',
-                    background: '#25D366',
-                    color: '#fff',
                     width: '60px',
                     height: '60px',
                     borderRadius: '50%',
+                    background: '#25D366',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     boxShadow: '0 4px 12px rgba(37, 211, 102, 0.4)',
-                    zIndex: 1000
+                    color: '#fff'
                 }}
             >
                 <MessageCircle size={28} />
