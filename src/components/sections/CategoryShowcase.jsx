@@ -28,7 +28,7 @@ const iconMap = {
 
 const CategoryShowcase = () => {
     return (
-        <Section className="container" id="categories" style={{ marginBottom: '150px' }}>
+        <Section className="container" id="categories" style={{ marginBottom: '150px', padding: '40px 0' }}>
             <div style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>
                 <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: 'var(--spacing-sm)' }}>
                     Our Product Categories

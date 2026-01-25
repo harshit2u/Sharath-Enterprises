@@ -37,7 +37,7 @@ const reviews = [
 
 const Testimonials = () => {
     return (
-        <section style={{ padding: 'var(--spacing-xxl) 0', overflow: 'hidden', background: 'var(--bg-card)' }}>
+        <section style={{ padding: '40px 0', overflow: 'hidden', background: 'var(--bg-card)' }}>
             <div className="container" style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>
                 <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: 'var(--spacing-sm)' }}>
                     What Our Customers Say

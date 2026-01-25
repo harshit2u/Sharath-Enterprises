@@ -27,7 +27,7 @@ const features = [
 
 const WhyChooseUs = () => {
     return (
-        <Section className="container" style={{ position: 'relative' }}>
+        <Section className="container" style={{ position: 'relative', padding: '40px 0' }}>
             <div style={{
                 position: 'absolute',
                 top: '50%',
