@@ -19,7 +19,7 @@ const Footer = () => {
                         Your one-stop solution for all AC and Refrigeration spare parts. We provide top-quality components for industrial and residential cooling systems.
                     </p>
                     <div style={{ display: 'flex', gap: 'var(--spacing-md)' }}>
-                        <SocialIcon icon={<Facebook size={20} />} />
+                        <SocialIcon icon={<Facebook size={20} />} href="https://www.facebook.com/profile.php?id=100067164795326" />
                         <SocialIcon icon={<Instagram size={20} />} />
                         <SocialIcon icon={<Twitter size={20} />} />
                     </div>
@@ -32,7 +32,7 @@ const Footer = () => {
                         <ContactItem icon={<MapPin size={18} />} text="Shop No 19, Vijaya House, Station Road, Vikhroli (W), Mumbai - 400083" />
                         <ContactItem icon={<Phone size={18} />} text="+91 8080055955" isLink href="tel:8080055955" />
                         <ContactItem icon={<MessageCircle size={18} />} text="WhatsApp Chat" isLink href="https://wa.me/918080055955" />
-                        <ContactItem icon={<Clock size={18} />} text="Mon - Sat: 9:00 AM - 8:00 PM" />
+                        <ContactItem icon={<Clock size={18} />} text="Everyday: 9:00 AM - 9:00 PM" />
                     </ul>
                 </div>
 
@@ -86,30 +86,38 @@ const ContactItem = ({ icon, text, isLink, href }) => (
     </li>
 );
 
-const SocialIcon = ({ icon }) => (
-    <div style={{
-        width: '36px',
-        height: '36px',
-        borderRadius: '50%',
-        background: 'rgba(0,0,0,0.05)', // Darker subtle bg for light theme
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        cursor: 'pointer',
-        transition: 'background 0.3s',
-        color: 'var(--primary-color)'
-    }}
-        onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'var(--primary-color)';
-            e.currentTarget.style.color = '#fff';
+const SocialIcon = ({ icon, href }) => {
+    const content = (
+        <div style={{
+            width: '36px',
+            height: '36px',
+            borderRadius: '50%',
+            background: 'rgba(0,0,0,0.05)', // Darker subtle bg for light theme
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            transition: 'background 0.3s',
+            color: 'var(--primary-color)'
         }}
-        onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'rgba(0,0,0,0.05)';
-            e.currentTarget.style.color = 'var(--primary-color)';
-        }}
-    >
-        {icon}
-    </div>
-);
+            onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'var(--primary-color)';
+                e.currentTarget.style.color = '#fff';
+            }}
+            onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(0,0,0,0.05)';
+                e.currentTarget.style.color = 'var(--primary-color)';
+            }}
+        >
+            {icon}
+        </div>
+    );
+
+    return href ? (
+        <a href={href} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+            {content}
+        </a>
+    ) : content;
+};
 
 export default Footer;
