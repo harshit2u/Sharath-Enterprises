@@ -99,8 +99,8 @@ const Navbar = () => {
             </a>
 
             {/* Mobile Toggle */}
-            <div className="mobile-toggle" onClick={toggleMenu} style={{ cursor: 'pointer', color: 'var(--text-main)' }}>
-                {isOpen ? <X size={28} /> : <Menu size={28} />}
+            <div className="mobile-toggle" onClick={toggleMenu} style={{ cursor: 'pointer', color: 'var(--text-main)', zIndex: 1002, position: 'relative' }}>
+                {isOpen ? null : <Menu size={28} />}
             </div>
 
             {/* Mobile Menu */}
@@ -113,18 +113,18 @@ const Navbar = () => {
                         transition={{ type: 'tween', duration: 0.3 }}
                         style={{
                             position: 'fixed',
-                            top: 0,
-                            right: 0,
-                            bottom: 0,
-                            left: 0, // Full width overlay
-                            background: 'var(--bg-dark)', // Solid background
+                            inset: 0,
+                            width: '100vw',
+                            height: '100vh',
+                            background: '#ffffff', // Solid white background
                             padding: 'var(--spacing-xl)',
-                            zIndex: 1001,
+                            zIndex: 9999, // Super high z-index
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            gap: 'var(--spacing-xl)'
+                            gap: 'var(--spacing-xl)',
+                            overflowY: 'auto' // Allow scroll if content is long
                         }}
                     >
                         <div style={{ position: 'absolute', top: '20px', right: '20px' }}>

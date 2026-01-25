@@ -27,8 +27,9 @@ const Hero = () => {
                 mixBlendMode: 'multiply' // Blends nicely with white
             }}></div>
 
-            {/* Glowing Orbs - Subtle for Light Theme */}
+            {/* Glowing Orbs - Subtle for Light Theme (Desktop Only) */}
             <motion.div
+                className="hero-orb"
                 animate={{
                     scale: [1, 1.2, 1],
                     opacity: [0.1, 0.2, 0.1], // Reduced opacity
@@ -48,6 +49,7 @@ const Hero = () => {
             />
 
             <motion.div
+                className="hero-orb"
                 animate={{
                     scale: [1, 1.1, 1],
                     opacity: [0.1, 0.2, 0.1],
@@ -65,6 +67,12 @@ const Hero = () => {
                     zIndex: 0
                 }}
             />
+
+            <style>{`
+                @media (max-width: 768px) {
+                    .hero-orb { display: none !important; }
+                }
+            `}</style>
 
             <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
                 <motion.h2
