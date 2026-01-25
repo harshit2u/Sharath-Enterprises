@@ -28,15 +28,22 @@ const iconMap = {
 
 const CategoryShowcase = () => {
     return (
-        <Section className="container" id="categories" style={{ marginBottom: '40px', padding: '40px 0' }}>
-            <div style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>
+        <Section className="container" id="categories" style={{ paddingTop: '20px', paddingBottom: '60px' }}>
+            <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
                 <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: 'var(--spacing-sm)' }}>
                     Our Product Categories
                 </h2>
                 <p style={{ color: 'var(--text-muted)' }}>Explore our wide range of spare parts and tools</p>
             </div>
 
-            <div className="grid-cols-auto" style={{ gap: '20px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
+            <div style={{
+                rowGap: '40px',
+                columnGap: '32px',
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                width: '100%',
+                alignItems: 'start'
+            }}>
                 {categories.map((cat, index) => {
                     const Icon = iconMap[cat.icon] || Settings;
                     return (
@@ -47,15 +54,22 @@ const CategoryShowcase = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                                animate={{
+                                    scale: 1,
+                                    boxShadow: 'none',
+                                    borderColor: 'rgba(255,255,255,0.05)',
+                                    transition: { type: 'tween', duration: 0, ease: 'linear' }
+                                }}
                                 whileHover={{
                                     scale: 1.05,
-                                    boxShadow: '0 8px 30px rgba(0, 123, 255, 0.2)'
+                                    boxShadow: '0 0 0 3px rgba(0, 123, 255, 0.4), 0 20px 60px rgba(0, 123, 255, 0.5)',
+                                    borderColor: 'rgba(0, 123, 255, 0.6)',
+                                    transition: { type: 'tween', duration: 0, ease: 'linear' }
                                 }}
                                 style={{
                                     padding: '30px 20px',
                                     textAlign: 'center',
                                     cursor: 'pointer',
-                                    height: '100%',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',

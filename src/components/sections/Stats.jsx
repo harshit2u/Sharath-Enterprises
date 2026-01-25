@@ -42,7 +42,7 @@ const Stats = () => {
             */}
             <div className="glass-panel" style={{
                 marginTop: '-50px',
-                marginBottom: 'var(--spacing-xl)',
+                marginBottom: '0',
                 borderRadius: 'var(--radius-xl)',
                 border: '1px solid rgba(255,255,255,0.05)',
                 background: 'var(--glass-bg)', // Ensure background is set to prevent see-through overlap mess
