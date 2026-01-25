@@ -28,7 +28,7 @@ const iconMap = {
 
 const CategoryShowcase = () => {
     return (
-        <Section className="container" id="categories" style={{ marginBottom: '150px', padding: '40px 0' }}>
+        <Section className="container" id="categories" style={{ marginBottom: '40px', padding: '40px 0' }}>
             <div style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>
                 <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: 'var(--spacing-sm)' }}>
                     Our Product Categories
@@ -36,7 +36,7 @@ const CategoryShowcase = () => {
                 <p style={{ color: 'var(--text-muted)' }}>Explore our wide range of spare parts and tools</p>
             </div>
 
-            <div className="grid-cols-auto" style={{ gap: 'var(--spacing-lg)' }}>
+            <div className="grid-cols-auto" style={{ gap: '20px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
                 {categories.map((cat, index) => {
                     const Icon = iconMap[cat.icon] || Settings;
                     return (
@@ -48,36 +48,42 @@ const CategoryShowcase = () => {
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 whileHover={{
-                                    y: -10,
-                                    boxShadow: '0 0 25px var(--primary-color)',
-                                    borderColor: 'var(--primary-color)'
+                                    scale: 1.05,
+                                    boxShadow: '0 8px 30px rgba(0, 123, 255, 0.2)'
                                 }}
                                 style={{
-                                    padding: 'var(--spacing-lg)',
+                                    padding: '30px 20px',
+                                    textAlign: 'center',
+                                    cursor: 'pointer',
                                     height: '100%',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
-                                    textAlign: 'center',
-                                    transition: 'box-shadow 0.3s ease, border-color 0.3s ease', // kept css transition for non-motion props if needed, but motion handles y/color well
-                                    cursor: 'pointer',
-                                    border: '1px solid transparent' // Ensure border transition is visible
+                                    justifyContent: 'center'
                                 }}
                             >
                                 <div style={{
-                                    background: 'rgba(0, 123, 255, 0.1)', // Fixed blue tint
-                                    padding: '20px',
+                                    width: '70px',
+                                    height: '70px',
                                     borderRadius: '50%',
-                                    marginBottom: 'var(--spacing-md)',
+                                    background: 'rgba(0, 123, 255, 0.1)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    marginBottom: '15px',
                                     color: 'var(--primary-color)'
                                 }}>
-                                    <Icon size={40} />
+                                    <Icon size={32} />
                                 </div>
-                                <h3 style={{ marginBottom: 'var(--spacing-sm)', fontSize: '1.25rem', color: 'var(--text-main)' }}>{cat.title}</h3>
-                                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>{cat.description}</p>
+                                <h3 style={{ fontSize: '1.1rem', marginBottom: '8px', color: 'var(--text-main)' }}>
+                                    {cat.title}
+                                </h3>
+                                <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', margin: 0 }}>
+                                    {cat.description}
+                                </p>
                             </motion.div>
                         </Link>
-                    )
+                    );
                 })}
             </div>
         </Section>
