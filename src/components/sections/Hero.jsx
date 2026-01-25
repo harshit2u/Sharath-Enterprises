@@ -136,26 +136,6 @@ const Hero = () => {
                         WhatsApp Enquiry <MessageCircle size={18} />
                     </Button>
                 </motion.div>
-
-                {/* Scroll Indicator */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5, duration: 1 }}
-                    style={{ position: 'absolute', bottom: '-150px', left: '50%', transform: 'translateX(-50%)' }}
-                >
-                    <div className="animate-float" style={{
-                        width: '30px',
-                        height: '50px',
-                        border: '2px solid var(--text-muted)',
-                        borderRadius: '15px',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        paddingTop: '10px'
-                    }}>
-                        <div style={{ width: '4px', height: '8px', background: 'var(--primary-color)', borderRadius: '2px' }}></div>
-                    </div>
-                </motion.div>
             </div>
         </div>
     );
