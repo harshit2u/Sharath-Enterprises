@@ -12,17 +12,20 @@ const FloatingButtons = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="animate-pulse"
                 style={{
-                    width: '50px',
-                    height: '50px',
+                    position: 'fixed',
+                    bottom: '30px',
+                    right: '30px',
+                    background: '#25D366',
+                    color: '#fff',
+                    width: '60px',
+                    height: '60px',
                     borderRadius: '50%',
-                    background: 'var(--secondary-color)', // Matching strict theme (Blue instead of Green)
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
-                    color: '#fff'
+                    boxShadow: '0 4px 12px rgba(37, 211, 102, 0.4)',
+                    zIndex: 1000
                 }}
             >
                 <MessageCircle size={28} />
