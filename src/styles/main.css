@@ -41,6 +41,14 @@
     gap: var(--spacing-lg);
 }
 
+@media (max-width: 640px) {
+    .grid-cols-auto {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px !important;
+        /* Smaller gap for mobile */
+    }
+}
+
 /* Scrollbar Customization */
 ::-webkit-scrollbar {
     width: 8px;

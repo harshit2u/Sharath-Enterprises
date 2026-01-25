@@ -4,6 +4,7 @@ import Stats from '../components/sections/Stats';
 import CategoryShowcase from '../components/sections/CategoryShowcase';
 import WhyChooseUs from '../components/sections/WhyChooseUs';
 import Testimonials from '../components/sections/Testimonials';
+import Brands from '../components/sections/Brands';
 import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
             </Helmet>
 
             <Hero />
+            <Brands />
             <Stats />
             <CategoryShowcase />
             <Testimonials />

@@ -145,75 +145,97 @@ const Products = () => {
                     </p>
                 </div>
 
-                {/* Compact Zig-Zag Layout */}
-                <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-lg)', paddingBottom: 'var(--spacing-xl)' }}>
+                {/* Product Grid Layout (2-Column Mobile) */}
+                <div className="container grid-cols-auto" style={{ paddingBottom: 'var(--spacing-xl)' }}>
                     {filteredProducts.length > 0 ? (
                         filteredProducts.map((product, index) => (
-                            <Section key={product.id} delay={index * 0.05} style={{ padding: 'var(--spacing-lg) 0', marginBottom: '0' }}> {/* Overriding default excessive section padding */}
-                                <div style={{
+                            <motion.div
+                                key={product.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ delay: index * 0.05 }}
+                                className="glass-panel"
+                                style={{
+                                    padding: '15px',
                                     display: 'flex',
-                                    flexDirection: index % 2 === 0 ? 'row' : 'row-reverse',
+                                    flexDirection: 'column',
+                                    gap: '10px',
+                                    border: '1px solid var(--glass-border)',
+                                    height: '100%'
+                                }}
+                            >
+                                {/* Image Area */}
+                                <div style={{
+                                    background: '#fff',
+                                    borderRadius: 'var(--radius-md)',
+                                    padding: '10px',
+                                    display: 'flex',
                                     alignItems: 'center',
-                                    gap: 'var(--spacing-xl)',
-                                    flexWrap: 'wrap',
-                                    background: 'var(--bg-card)',
-                                    padding: 'var(--spacing-md)', // Reduced padding
-                                    borderRadius: 'var(--radius-lg)',
-                                    border: '1px solid var(--glass-border)'
+                                    justifyContent: 'center',
+                                    height: '140px'
                                 }}>
-                                    {/* Text Content */}
-                                    <div style={{ flex: 1.2, minWidth: '300px' }}> {/* Increased flex ratio for text */}
-                                        <h2 style={{ fontSize: '1.8rem', marginBottom: 'var(--spacing-xs)', color: 'var(--text-main)' }}> {/* Smaller Title */}
-                                            {product.title}
-                                        </h2>
-                                        <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: '1.5', marginBottom: 'var(--spacing-sm)' }}> {/* Compact Text */}
-                                            {product.description}
-                                        </p>
-                                        <ul style={{ listStyle: 'none', padding: 0, display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                                            {product.features.map((feature, i) => (
-                                                <li key={i} style={{
-                                                    background: 'rgba(0, 123, 255, 0.05)',
-                                                    padding: '4px 10px', // Smaller badges
-                                                    borderRadius: 'var(--radius-sm)',
-                                                    fontSize: '0.8rem',
-                                                    fontWeight: '600',
-                                                    color: 'var(--primary-color)'
-                                                }}>
-                                                    {feature}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
+                                    <img
+                                        src={product.image}
+                                        alt={product.title}
+                                        style={{
+                                            maxWidth: '100%',
+                                            maxHeight: '100%',
+                                            objectFit: 'contain'
+                                        }}
+                                    />
+                                </div>
 
-                                    {/* Image Content */}
-                                    <div style={{ flex: 0.8, minWidth: '200px', maxWidth: '300px' }}> {/* Smaller Image Container */}
-                                        <motion.div
-                                            whileHover={{ scale: 1.02 }}
-                                            transition={{ type: 'spring', stiffness: 200 }}
-                                            style={{
-                                                borderRadius: 'var(--radius-md)',
-                                                overflow: 'hidden'
-                                            }}
-                                        >
-                                            <img
-                                                src={product.image}
-                                                alt={product.title}
-                                                style={{
-                                                    width: '100%',
-                                                    height: 'auto',
-                                                    maxHeight: '200px', // Limit height
-                                                    objectFit: 'contain',
-                                                    display: 'block'
-                                                }}
-                                            />
-                                        </motion.div>
+                                {/* Content */}
+                                <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+                                    <h3 style={{
+                                        fontSize: '1rem',
+                                        fontWeight: '700',
+                                        lineHeight: '1.3',
+                                        marginBottom: '6px',
+                                        color: 'var(--text-main)',
+                                        minHeight: '2.6em' // Ensure 2 lines alignment
+                                    }}>
+                                        {product.title}
+                                    </h3>
+
+                                    <p style={{
+                                        fontSize: '0.8rem',
+                                        color: 'var(--text-muted)',
+                                        marginBottom: '10px',
+                                        display: '-webkit-box',
+                                        WebkitLineClamp: 3,
+                                        WebkitBoxOrient: 'vertical',
+                                        overflow: 'hidden',
+                                        flex: 1
+                                    }}>
+                                        {product.description}
+                                    </p>
+
+                                    {/* Features Snippet */}
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+                                        {product.features.slice(0, 2).map((feature, i) => (
+                                            <span key={i} style={{
+                                                fontSize: '0.7rem',
+                                                padding: '2px 6px',
+                                                background: 'var(--bg-lighter)',
+                                                borderRadius: '4px',
+                                                color: 'var(--primary-color)',
+                                                whiteSpace: 'nowrap'
+                                            }}>
+                                                {feature}
+                                            </span>
+                                        ))}
+                                        {product.features.length > 2 && (
+                                            <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', padding: '2px' }}>+{product.features.length - 2}</span>
+                                        )}
                                     </div>
                                 </div>
-                            </Section>
+                            </motion.div>
                         ))
                     ) : (
-                        <div style={{ textAlign: 'center', padding: '50px 0' }}>
-                            <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)' }}>No products found.</p>
+                        <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '50px 0' }}>
+                            <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)' }}>No products found in this category.</p>
                             <button
                                 onClick={() => window.location.href = '/products'}
                                 style={{
@@ -221,7 +243,9 @@ const Products = () => {
                                     padding: '8px 16px',
                                     background: 'var(--primary-color)',
                                     color: '#fff',
-                                    borderRadius: 'var(--radius-full)'
+                                    borderRadius: 'var(--radius-full)',
+                                    border: 'none',
+                                    cursor: 'pointer'
                                 }}
                             >
                                 View All Products

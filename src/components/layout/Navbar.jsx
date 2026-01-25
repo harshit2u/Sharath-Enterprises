@@ -99,37 +99,41 @@ const Navbar = () => {
             </a>
 
             {/* Mobile Toggle */}
-            <div className="mobile-toggle" onClick={toggleMenu} style={{ cursor: 'pointer', color: 'var(--text-main)', zIndex: 1002, position: 'relative' }}>
-                {isOpen ? null : <Menu size={28} />}
+            <div className="mobile-toggle" onClick={toggleMenu} style={{ cursor: 'pointer', color: 'var(--text-main)', zIndex: 1002 }}>
+                {isOpen ? <X size={28} /> : <Menu size={28} />}
             </div>
 
             {/* Mobile Menu */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ x: '100%' }}
-                        animate={{ x: 0 }}
-                        exit={{ x: '100%' }}
-                        transition={{ type: 'tween', duration: 0.3 }}
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ type: 'tween', duration: 0.2 }}
                         style={{
                             position: 'fixed',
-                            inset: 0,
-                            width: '100vw',
-                            height: '100vh',
-                            background: '#ffffff', // Solid white background
-                            padding: 'var(--spacing-xl)',
-                            zIndex: 9999, // Super high z-index
+                            top: '80px', // Below the navbar
+                            left: 0,
+                            right: 0,
+                            height: 'auto',
+                            maxHeight: '70vh', // Don't go all the way down
+                            background: 'rgba(255, 255, 255, 0.98)',
+                            backdropFilter: 'blur(12px)',
+                            padding: '20px',
+                            zIndex: 9998,
+                            borderBottom: '1px solid var(--glass-border)',
+                            boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+                            borderRadius: '0 0 20px 20px',
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
-                            justifyContent: 'center',
-                            gap: 'var(--spacing-xl)',
-                            overflowY: 'auto' // Allow scroll if content is long
+                            justifyContent: 'flex-start',
+                            gap: '15px',
+                            overflowY: 'auto'
                         }}
                     >
-                        <div style={{ position: 'absolute', top: '20px', right: '20px' }}>
-                            <X size={32} onClick={toggleMenu} style={{ cursor: 'pointer', color: 'var(--text-main)' }} />
-                        </div>
+                        {/* Removed the 'X' inside, since the toggle is on the navbar */}
 
                         {navLinks.map((link) => (
                             <Link
@@ -137,9 +141,17 @@ const Navbar = () => {
                                 to={link.path}
                                 onClick={toggleMenu}
                                 style={{
-                                    fontSize: '1.5rem',
-                                    fontWeight: '700',
-                                    color: location.pathname === link.path ? 'var(--primary-color)' : 'var(--text-main)',
+                                    width: '100%',
+                                    maxWidth: '300px',
+                                    textAlign: 'center',
+                                    padding: '15px 20px',
+                                    borderRadius: 'var(--radius-lg)',
+                                    background: location.pathname === link.path ? 'var(--primary-color)' : 'transparent',
+                                    color: location.pathname === link.path ? '#fff' : 'var(--text-main)',
+                                    fontSize: '1.25rem',
+                                    fontWeight: '600',
+                                    transition: 'all 0.2s ease',
+                                    border: location.pathname === link.path ? 'none' : '1px solid var(--glass-border)'
                                 }}
                             >
                                 {link.name}
