@@ -21,7 +21,7 @@ const Contact = () => {
                 <meta name="description" content="Visit our shop in Vikhroli (W), Mumbai or call us for any AC spare parts inquiry." />
             </Helmet>
 
-            <div className="container" style={{ paddingTop: '80px', paddingBottom: '30px' }}>
+            <div className="container" style={{ paddingTop: '80px', paddingBottom: '30px', minHeight: 'auto' }}>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -34,7 +34,7 @@ const Contact = () => {
                     </p>
                 </motion.div>
 
-                <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <div style={{ maxWidth: '800px', margin: '0 auto' }}>
 
                     {/* Contact Info Centered - Replaced Section with div to remove default padding */}
                     <motion.div
