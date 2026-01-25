@@ -40,10 +40,24 @@ const CategoryShowcase = () => {
                 rowGap: '40px',
                 columnGap: '32px',
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gridTemplateColumns: 'repeat(4, 1fr)',
                 width: '100%',
                 alignItems: 'start'
             }}>
+                <style>{`
+                    @media (max-width: 1024px) {
+                        #categories > div {
+                            grid-template-columns: repeat(3, 1fr) !important;
+                        }
+                    }
+                    @media (max-width: 768px) {
+                        #categories > div {
+                            grid-template-columns: repeat(2, 1fr) !important;
+                            row-gap: 24px !important;
+                            column-gap: 16px !important;
+                        }
+                    }
+                `}</style>
                 {categories.map((cat, index) => {
                     const Icon = iconMap[cat.icon] || Settings;
                     return (
