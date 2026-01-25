@@ -215,8 +215,7 @@ const Products = () => {
                                             color: 'var(--text-muted)',
                                             fontSize: '0.9rem',
                                             lineHeight: '1.5',
-                                            marginBottom: '16px',
-                                            flex: 1
+                                            marginBottom: '12px'
                                         }}>
                                             {product.description}
                                         </p>
@@ -256,22 +255,30 @@ const Products = () => {
                                     }
                                 }
                                 @media (max-width: 768px) {
+                                    .container > div {
+                                        padding-left: 12px !important;
+                                        padding-right: 12px !important;
+                                    }
                                     .container > div > div {
                                         grid-template-columns: repeat(2, 1fr) !important;
-                                        gap: 16px !important;
-                                        row-gap: 24px !important;
+                                        gap: 12px !important;
+                                        row-gap: 20px !important;
                                     }
                                     .container > div > div > div {
-                                        padding: 16px !important;
+                                        padding: 12px !important;
                                     }
                                     .container > div > div > div > div:first-child {
-                                        height: 150px !important;
+                                        height: 120px !important;
+                                        margin-bottom: 10px !important;
                                     }
                                     .container > div > div > div h3 {
-                                        font-size: 1.1rem !important;
+                                        font-size: 1rem !important;
+                                        margin-bottom: 8px !important;
                                     }
                                     .container > div > div > div p {
-                                        font-size: 0.85rem !important;
+                                        font-size: 0.8rem !important;
+                                        line-height: 1.4 !important;
+                                        margin-bottom: 8px !important;
                                     }
                                 }
                             `}</style>
