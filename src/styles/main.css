@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap');
 @import './animations.css';
 
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 /* Utility Classes */
 .container {
     width: 100%;
@@ -37,15 +45,22 @@
 
 .grid-cols-auto {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    /* Desktop: 4 cols strictly */
     gap: var(--spacing-lg);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
+    .grid-cols-auto {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
     .grid-cols-auto {
         grid-template-columns: repeat(2, 1fr);
+        /* Mobile: 2 cols strictly */
         gap: 12px !important;
-        /* Smaller gap for mobile */
     }
 }
 

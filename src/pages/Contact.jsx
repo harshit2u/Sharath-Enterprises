@@ -21,15 +21,15 @@ const Contact = () => {
                 <meta name="description" content="Visit our shop in Vikhroli (W), Mumbai or call us for any AC spare parts inquiry." />
             </Helmet>
 
-            <div className="container" style={{ paddingTop: '100px', paddingBottom: 'var(--spacing-xl)' }}>
-                <Section className="text-center" style={{ marginBottom: 'var(--spacing-xl)' }}>
-                    <h1 className="text-gradient" style={{ fontSize: '3rem', marginBottom: 'var(--spacing-md)' }}>Contact Us</h1>
-                    <p style={{ color: 'var(--text-muted)', marginBottom: 'var(--spacing-lg)' }}>
+            <div className="container" style={{ paddingTop: '80px', paddingBottom: 'var(--spacing-md)' }}>
+                <Section className="text-center" style={{ marginBottom: 'var(--spacing-lg)' }}>
+                    <h1 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: 'var(--spacing-sm)' }}>Contact Us</h1>
+                    <p style={{ color: 'var(--text-muted)', marginBottom: 'var(--spacing-md)' }}>
                         Have a question or looking for a specific part? Our team is ready to assist you.
                     </p>
                 </Section>
 
-                <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 'var(--spacing-xl)' }}>
+                <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 'var(--spacing-lg)' }}>
 
                     {/* Contact Info Centered */}
                     <Section delay={0.2} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 'var(--spacing-lg)' }}>
