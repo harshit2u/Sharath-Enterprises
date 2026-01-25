@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Section from '../components/common/Section';
 import Button from '../components/common/Button';
+import FAQ from '../components/sections/FAQ';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -77,6 +78,9 @@ const Contact = () => {
                             </p>
                         </div>
                     </motion.div>
+
+                    {/* FAQ Section */}
+                    <FAQ />
                 </div>
             </div>
         </>
