@@ -7,7 +7,7 @@ const Footer = () => {
         <footer style={{
             background: 'var(--bg-lighter)',
             paddingTop: '30px',
-            marginTop: '30px',
+            marginTop: '0',
             borderTop: '1px solid var(--glass-border)'
         }}>
             <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'var(--spacing-xl)', paddingBottom: 'var(--spacing-xl)' }}>
