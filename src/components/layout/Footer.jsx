@@ -6,8 +6,8 @@ const Footer = () => {
     return (
         <footer style={{
             background: 'var(--bg-lighter)',
-            paddingTop: 'var(--spacing-xxl)',
-            marginTop: 'var(--spacing-xxl)',
+            paddingTop: 'var(--spacing-lg)',
+            marginTop: 'var(--spacing-lg)',
             borderTop: '1px solid var(--glass-border)'
         }}>
             <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'var(--spacing-xl)', paddingBottom: 'var(--spacing-xl)' }}>

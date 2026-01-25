@@ -21,23 +21,33 @@ const Contact = () => {
                 <meta name="description" content="Visit our shop in Vikhroli (W), Mumbai or call us for any AC spare parts inquiry." />
             </Helmet>
 
-            <div className="container" style={{ paddingTop: '80px', paddingBottom: 'var(--spacing-md)' }}>
-                <Section className="text-center" style={{ marginBottom: 'var(--spacing-lg)' }}>
-                    <h1 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: 'var(--spacing-sm)' }}>Contact Us</h1>
-                    <p style={{ color: 'var(--text-muted)', marginBottom: 'var(--spacing-md)' }}>
+            <div className="container" style={{ paddingTop: '80px', paddingBottom: '0' }}>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-center"
+                    style={{ marginBottom: '20px', padding: '20px 0' }}
+                >
+                    <h1 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: '10px' }}>Contact Us</h1>
+                    <p style={{ color: 'var(--text-muted)', marginBottom: '10px' }}>
                         Have a question or looking for a specific part? Our team is ready to assist you.
                     </p>
-                </Section>
+                </motion.div>
 
-                <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 'var(--spacing-lg)' }}>
+                <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '20px' }}>
 
-                    {/* Contact Info Centered */}
-                    <Section delay={0.2} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 'var(--spacing-lg)' }}>
-                        <div className="glass-panel" style={{ padding: 'var(--spacing-lg)', textAlign: 'center' }}>
-                            <div style={{ marginBottom: 'var(--spacing-md)', display: 'flex', justifyContent: 'center' }}>
+                    {/* Contact Info Centered - Replaced Section with div to remove default padding */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '15px' }}
+                    >
+                        <div className="glass-panel" style={{ padding: '20px', textAlign: 'center' }}>
+                            <div style={{ marginBottom: '15px', display: 'flex', justifyContent: 'center' }}>
                                 <MapPin size={32} color="var(--primary-color)" />
                             </div>
-                            <h3 style={{ marginBottom: 'var(--spacing-md)', color: 'var(--text-main)' }}>Visit Us</h3>
+                            <h3 style={{ marginBottom: '10px', color: 'var(--text-main)' }}>Visit Us</h3>
                             <p style={{ color: 'var(--text-muted)', lineHeight: '1.6' }}>
                                 Shop No 19, Vijaya House,<br />
                                 Station Road, Vikhroli (West),<br />
@@ -45,28 +55,28 @@ const Contact = () => {
                             </p>
                         </div>
 
-                        <div className="glass-panel" style={{ padding: 'var(--spacing-lg)', textAlign: 'center' }}>
-                            <div style={{ marginBottom: 'var(--spacing-md)', display: 'flex', justifyContent: 'center' }}>
+                        <div className="glass-panel" style={{ padding: '20px', textAlign: 'center' }}>
+                            <div style={{ marginBottom: '15px', display: 'flex', justifyContent: 'center' }}>
                                 <Phone size={32} color="var(--primary-color)" />
                             </div>
-                            <h3 style={{ marginBottom: 'var(--spacing-md)', color: 'var(--text-main)' }}>Call Us</h3>
+                            <h3 style={{ marginBottom: '10px', color: 'var(--text-main)' }}>Call Us</h3>
                             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', marginBottom: '10px' }}>
                                 <a href="tel:8080055955" className="hover:text-primary">8080055955</a>
                             </p>
                             <Button variant="outline" onClick={() => window.open('https://wa.me/918080055955')}>Chat on WhatsApp</Button>
                         </div>
 
-                        <div className="glass-panel" style={{ padding: 'var(--spacing-lg)', textAlign: 'center' }}>
-                            <div style={{ marginBottom: 'var(--spacing-md)', display: 'flex', justifyContent: 'center' }}>
+                        <div className="glass-panel" style={{ padding: '20px', textAlign: 'center' }}>
+                            <div style={{ marginBottom: '15px', display: 'flex', justifyContent: 'center' }}>
                                 <Clock size={32} color="var(--primary-color)" />
                             </div>
-                            <h3 style={{ marginBottom: 'var(--spacing-md)', color: 'var(--text-main)' }}>Business Hours</h3>
+                            <h3 style={{ marginBottom: '10px', color: 'var(--text-main)' }}>Business Hours</h3>
                             <p style={{ color: 'var(--text-muted)' }}>
-                                Monday - Saturday: 9:00 AM - 8:00 PM<br />
-                                Sunday: Closed
+                                Monday - Sunday: 9:00 AM - 8:00 PM<br />
+                                (Open All Days)
                             </p>
                         </div>
-                    </Section>
+                    </motion.div>
                 </div>
             </div>
         </>
