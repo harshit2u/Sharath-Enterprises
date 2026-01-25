@@ -145,87 +145,39 @@ const Products = () => {
                     </p>
                 </div>
 
-                {/* Grid Card Layout */}
-                <div className="container" style={{ paddingBottom: 'var(--spacing-xl)' }}>
+                {/* Zigzag Layout for Desktop, Grid for Mobile */}
+                <div className="container products-container" style={{ paddingBottom: 'var(--spacing-xl)' }}>
                     {filteredProducts.length > 0 ? (
                         <>
-                            <div style={{
-                                display: 'grid',
-                                gridTemplateColumns: 'repeat(3, 1fr)',
-                                gap: '32px',
-                                rowGap: '40px'
-                            }}>
-                                {filteredProducts.map((product, index) => (
-                                    <motion.div
-                                        key={product.id}
-                                        initial={{ opacity: 0, y: 30 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: true, margin: "-50px" }}
-                                        transition={{ duration: 0.5, delay: index * 0.05 }}
-                                        className="glass-panel"
-                                        whileHover={{
-                                            scale: 1.02,
-                                            boxShadow: '0 0 0 2px rgba(0, 123, 255, 0.3), 0 15px 40px rgba(0, 123, 255, 0.4)',
-                                            transition: { type: 'tween', duration: 0, ease: 'linear' }
-                                        }}
-                                        animate={{
-                                            scale: 1,
-                                            transition: { type: 'tween', duration: 0, ease: 'linear' }
-                                        }}
-                                        style={{
-                                            padding: '24px',
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            cursor: 'pointer',
-                                            height: '100%'
-                                        }}
-                                    >
-                                        {/* Image */}
-                                        <div style={{
-                                            width: '100%',
-                                            height: '200px',
-                                            borderRadius: 'var(--radius-md)',
-                                            overflow: 'hidden',
-                                            marginBottom: '16px',
-                                            background: 'rgba(0, 123, 255, 0.02)'
-                                        }}>
-                                            <img
-                                                src={product.image}
-                                                alt={product.title}
-                                                style={{
-                                                    width: '100%',
-                                                    height: '100%',
-                                                    objectFit: 'contain'
-                                                }}
-                                            />
-                                        </div>
-
-                                        {/* Title */}
-                                        <h3 style={{
-                                            fontSize: '1.3rem',
-                                            marginBottom: '12px',
-                                            color: 'var(--text-main)',
-                                            fontWeight: '600'
-                                        }}>
+                            {filteredProducts.map((product, index) => (
+                                <motion.div
+                                    key={product.id}
+                                    className="product-card"
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    transition={{ duration: 0.5, delay: index * 0.05 }}
+                                    style={{
+                                        display: 'flex',
+                                        flexDirection: index % 2 === 0 ? 'row' : 'row-reverse',
+                                        alignItems: 'center',
+                                        gap: 'var(--spacing-xl)',
+                                        marginBottom: 'var(--spacing-lg)',
+                                        background: 'var(--bg-card)',
+                                        padding: 'var(--spacing-md)',
+                                        borderRadius: 'var(--radius-lg)',
+                                        border: '1px solid var(--glass-border)'
+                                    }}
+                                >
+                                    {/* Text Content */}
+                                    <div style={{ flex: 1.2, minWidth: '300px' }}>
+                                        <h2 style={{ fontSize: '1.8rem', marginBottom: 'var(--spacing-xs)', color: 'var(--text-main)' }}>
                                             {product.title}
-                                        </h3>
-
-                                        {/* Description */}
-                                        <p style={{
-                                            color: 'var(--text-muted)',
-                                            fontSize: '0.9rem',
-                                            lineHeight: '1.5',
-                                            marginBottom: '12px'
-                                        }}>
+                                        </h2>
+                                        <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: '1.5', marginBottom: 'var(--spacing-sm)' }}>
                                             {product.description}
                                         </p>
-
-                                        {/* Features */}
-                                        <div style={{
-                                            display: 'flex',
-                                            flexWrap: 'wrap',
-                                            gap: '8px'
-                                        }}>
+                                        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                                             {product.features.map((feature, i) => (
                                                 <span
                                                     key={i}
@@ -233,7 +185,7 @@ const Products = () => {
                                                         background: 'rgba(0, 123, 255, 0.1)',
                                                         padding: '4px 10px',
                                                         borderRadius: 'var(--radius-sm)',
-                                                        fontSize: '0.75rem',
+                                                        fontSize: '0.8rem',
                                                         fontWeight: '600',
                                                         color: 'var(--primary-color)'
                                                     }}
@@ -242,40 +194,75 @@ const Products = () => {
                                                 </span>
                                             ))}
                                         </div>
-                                    </motion.div>
-                                ))}
-                            </div>
+                                    </div>
+
+                                    {/* Image Content */}
+                                    <div style={{ flex: 0.8, minWidth: '200px', maxWidth: '300px' }}>
+                                        <motion.div
+                                            whileHover={{ scale: 1.02 }}
+                                            transition={{ type: 'spring', stiffness: 200 }}
+                                            style={{
+                                                borderRadius: 'var(--radius-md)',
+                                                overflow: 'hidden'
+                                            }}
+                                        >
+                                            <img
+                                                src={product.image}
+                                                alt={product.title}
+                                                style={{
+                                                    width: '100%',
+                                                    height: 'auto',
+                                                    maxHeight: '200px',
+                                                    objectFit: 'contain',
+                                                    display: 'block'
+                                                }}
+                                            />
+                                        </motion.div>
+                                    </div>
+                                </motion.div>
+                            ))}
 
                             {/* Responsive Styles */}
                             <style>{`
-                                @media (max-width: 1024px) {
-                                    .container > div > div {
-                                        grid-template-columns: repeat(2, 1fr) !important;
-                                        gap: 24px !important;
-                                    }
-                                }
                                 @media (max-width: 768px) {
-                                    .container > div {
-                                        padding-left: 12px !important;
-                                        padding-right: 12px !important;
+                                    body {
+                                        overflow-x: hidden;
                                     }
-                                    .container > div > div {
+                                    .products-container {
+                                        padding-left: 8px !important;
+                                        padding-right: 8px !important;
+                                        display: grid !important;
                                         grid-template-columns: repeat(2, 1fr) !important;
-                                        gap: 12px !important;
-                                        row-gap: 20px !important;
+                                        gap: 8px !important;
+                                        row-gap: 16px !important;
                                     }
-                                    .container > div > div > div {
-                                        padding: 12px !important;
+                                    .product-card {
+                                        flex-direction: column !important;
+                                        padding: 10px !important;
+                                        margin-bottom: 0 !important;
+                                        gap: 0 !important;
                                     }
-                                    .container > div > div > div > div:first-child {
+                                    .product-card > div:first-child {
+                                        min-width: 100% !important;
+                                        order: 2;
+                                    }
+                                    .product-card > div:last-child {
+                                        min-width: 100% !important;
+                                        max-width: 100% !important;
+                                        order: 1;
+                                        margin-bottom: 6px;
+                                    }
+                                    .product-card > div:last-child > div {
                                         height: 120px !important;
-                                        margin-bottom: 6px !important;
                                     }
-                                    .container > div > div > div h3 {
+                                    .product-card > div:last-child img {
+                                        max-height: 120px !important;
+                                    }
+                                    .product-card h2 {
                                         font-size: 1rem !important;
                                         margin-bottom: 4px !important;
                                     }
-                                    .container > div > div > div p {
+                                    .product-card p {
                                         font-size: 0.8rem !important;
                                         line-height: 1.4 !important;
                                         margin-bottom: 6px !important;
