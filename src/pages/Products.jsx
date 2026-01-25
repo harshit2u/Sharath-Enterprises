@@ -209,6 +209,36 @@ const Products = () => {
                                         </motion.div>
                                     </div>
                                 </div>
+
+                                {/* Mobile-specific compact styling */}
+                                <style>{`
+                                    @media (max-width: 768px) {
+                                        .container > div > section > div {
+                                            padding: 12px !important;
+                                            gap: 12px !important;
+                                            flex-direction: column !important;
+                                        }
+                                        .container > div > section > div > div:first-child {
+                                            min-width: 100% !important;
+                                        }
+                                        .container > div > section > div > div:first-child h2 {
+                                            font-size: 1.3rem !important;
+                                            margin-bottom: 8px !important;
+                                        }
+                                        .container > div > section > div > div:first-child p {
+                                            font-size: 0.85rem !important;
+                                            line-height: 1.4 !important;
+                                            margin-bottom: 8px !important;
+                                        }
+                                        .container > div > section > div > div:last-child {
+                                            max-width: 100% !important;
+                                            min-width: 100% !important;
+                                        }
+                                        .container > div > section > div > div:last-child img {
+                                            max-height: 120px !important;
+                                        }
+                                    }
+                                `}</style>
                             </Section>
                         ))
                     ) : (
