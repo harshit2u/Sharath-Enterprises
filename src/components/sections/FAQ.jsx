@@ -8,8 +8,8 @@ const faqs = [
         answer: "We are open Monday to Sunday from 9:00 AM to 8:00 PM. We operate all days of the week to ensure you can get the parts you need when you need them."
     },
     {
-        question: "Do you deliver spare parts?",
-        answer: "Yes, we offer same-day delivery within Mumbai for urgent orders. For other locations, we can arrange shipping through reliable courier services."
+        question: "Do you have a warranty on spare parts?",
+        answer: "Yes, all our genuine parts come with manufacturer warranty. The warranty period varies by product and manufacturer, typically ranging from 6 months to 2 years. We also provide warranty documentation with every purchase."
     },
     {
         question: "Are all your products genuine?",
@@ -20,8 +20,8 @@ const faqs = [
         answer: "Yes! Our knowledgeable team can help you identify the exact part you need. Just provide us with your AC model number, and we'll guide you to the right component."
     },
     {
-        question: "Do you offer bulk discounts for contractors?",
-        answer: "Yes, we provide special pricing for HVAC contractors and businesses who purchase in bulk. Contact us directly to discuss your requirements."
+        question: "What if the part I need is not in stock?",
+        answer: "If we don't have a specific part in stock, we can usually procure it within 24-48 hours from our supplier network. For urgent requirements, we'll help you find alternative solutions or compatible parts."
     },
     {
         question: "What payment methods do you accept?",
