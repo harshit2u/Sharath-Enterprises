@@ -24,7 +24,7 @@ const productSections = [
         id: 'gases',
         category: 'gases',
         title: "Refrigerant Gases (R32, R410A)",
-        description: "Top-grade refrigerant gases available in certified, safety-compliant cylinders. We supply environmentally friendly options like R32 and R410A, known for their zero ozone depletion potential and high energy efficiency. Pure and moisture-free, our gases ensure your cooling systems run at peak performance.",
+        description: "Certified eco-friendly refrigerant gases (R32, R410A) with zero ozone depletion. 99.9% pure and moisture-free for peak cooling performance.",
         image: productGas,
         features: ["99.9% Purity", "Eco-Friendly Options", "Safety Valves", "Standard Cylinders"]
     },
@@ -32,7 +32,7 @@ const productSections = [
         id: 'motors',
         category: 'motors',
         title: "Universal Fan Motors",
-        description: "Our universal fan motors are compatible with a vast array of indoor and outdoor AC units. Built with high-quality copper windings and durable ball bearings, they provide consistent airflow and quiet operation. Whether you need a replacement for a window AC blower or a split unit condenser fan, we have the right motor specifications.",
+        description: "Universal fan motors compatible with indoor and outdoor AC units. High-quality copper windings and durable ball bearings for quiet, consistent airflow.",
         image: productMotor,
         features: ["Copper Winding", "Silent Operation", "Long Life Bearings", "Universal Fit"]
     },
@@ -40,7 +40,7 @@ const productSections = [
         id: 'compressors',
         category: 'compressors',
         title: "Industrial Compressors",
-        description: "We stock a wide range of high-performance compressors including Rotary, Reciprocating, and Scroll types. Designed for both residential split ACs and heavy-duty commercial chillers, these compressors ensure rapid cooling and energy efficiency. We partner with leading global brands to bring you units that operate quietly, withstand voltage fluctuations.",
+        description: "High-performance Rotary, Reciprocating, and Scroll compressors for residential and commercial use. Energy-efficient with quiet operation and voltage protection.",
         image: productCompressor,
         features: ["High Efficiency", "Low Noise", "Wide Voltage Range", "Thermal Overload Protection"]
     },
@@ -80,7 +80,7 @@ const productSections = [
         id: 'copper',
         category: 'copper',
         title: "Copper Piping Coils",
-        description: "Our premium copper piping coils are engineered for maximum efficiency. 99.9% pure copper.",
+        description: "Premium 99.9% pure copper piping coils. Seamless construction for maximum efficiency and easy installation.",
         image: productCopper,
         features: ["99.9% Pure Copper", "Seamless", "Easy Bending"]
     },
