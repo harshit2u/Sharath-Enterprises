@@ -37,30 +37,51 @@ const reviews = [
 
 const Testimonials = () => {
     return (
-        <section style={{ padding: 'var(--spacing-xl) 0', background: 'var(--bg-card)' }}>
-            <div className="container" style={{ textAlign: 'center', marginBottom: 'var(--spacing-lg)' }}>
-                <h2 className="text-gradient" style={{ fontSize: '2rem', marginBottom: 'var(--spacing-xs)' }}>
-                    Customer Reviews
+        <section style={{ padding: 'var(--spacing-xxl) 0', overflow: 'hidden', background: 'var(--bg-card)' }}>
+            <div className="container" style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>
+                <h2 className="text-gradient" style={{ fontSize: '2.5rem', marginBottom: 'var(--spacing-sm)' }}>
+                    What Our Customers Say
                 </h2>
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Trusted by technicians across Mumbai</p>
+                <p style={{ color: 'var(--text-muted)' }}>Trusted by hundreds of technicians across Mumbai</p>
             </div>
 
-            <div className="container">
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', // Desktop default
-                    gap: '15px'
-                }}>
-                    {/* Mobile overrides via inline style check or generic CSS class if available. 
-                        Using the 'grid-cols-auto' class from main.css which I updated earlier is safer. */}
-                    {/* Actually, let's use the className "grid-cols-auto" which forces 2 cols on mobile now. */}
-                </div>
+            <div style={{ position: 'relative', width: '100vw', left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw' }}>
+                <div style={{ display: 'flex', overflow: 'hidden', width: '100%' }}>
+                    {/* First Loop */}
+                    <motion.div
+                        animate={{ x: [0, -1000] }}
+                        transition={{
+                            x: {
+                                repeat: Infinity,
+                                repeatType: "loop",
+                                duration: 20,
+                                ease: "linear",
+                            },
+                        }}
+                        style={{ display: 'flex', gap: 'var(--spacing-lg)', paddingLeft: 'var(--spacing-lg)' }}
+                    >
+                        {reviews.map((review, index) => (
+                            <ReviewCard key={index} review={review} />
+                        ))}
+                    </motion.div>
 
-                {/* Direct implementation using className for consistency */}
-                <div className="grid-cols-auto" style={{ gap: '10px' }}>
-                    {reviews.map((review, index) => (
-                        <ReviewCard key={index} review={review} />
-                    ))}
+                    {/* Duplicate Loop for seamless effect */}
+                    <motion.div
+                        animate={{ x: [0, -1000] }}
+                        transition={{
+                            x: {
+                                repeat: Infinity,
+                                repeatType: "loop",
+                                duration: 20,
+                                ease: "linear",
+                            },
+                        }}
+                        style={{ display: 'flex', gap: 'var(--spacing-lg)', paddingLeft: 'var(--spacing-lg)' }}
+                    >
+                        {reviews.map((review, index) => (
+                            <ReviewCard key={`dup-${index}`} review={review} />
+                        ))}
+                    </motion.div>
                 </div>
             </div>
         </section>
@@ -69,49 +90,27 @@ const Testimonials = () => {
 
 const ReviewCard = ({ review }) => (
     <div className="glass-panel" style={{
-        padding: '15px',
-        borderRadius: 'var(--radius-md)',
+        minWidth: '350px',
+        padding: 'var(--spacing-lg)',
+        borderRadius: 'var(--radius-lg)',
         background: '#fff',
-        border: '1px solid var(--glass-border)',
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between'
+        border: '1px solid var(--glass-border)'
     }}>
-        <div>
-            <div style={{ marginBottom: '8px', color: 'var(--primary-color)' }}>
-                <Quote size={16} /> {/* Smaller Icon */}
-            </div>
-            <p style={{
-                color: 'var(--text-muted)',
-                fontStyle: 'italic',
-                marginBottom: '10px',
-                fontSize: '0.8rem', // Smaller text
-                lineHeight: '1.4',
-                display: '-webkit-box',
-                WebkitLineClamp: 3,
-                WebkitBoxOrient: 'vertical',
-                overflow: 'hidden'
-            }}>
-                "{review.text}"
-            </p>
+        <div style={{ marginBottom: 'var(--spacing-sm)', color: 'var(--primary-color)' }}>
+            <Quote size={32} />
         </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div style={{ overflow: 'hidden' }}>
-                <h4 style={{
-                    fontWeight: '700',
-                    color: 'var(--text-main)',
-                    fontSize: '0.85rem',
-                    whiteSpace: 'nowrap',
-                    textOverflow: 'ellipsis',
-                    overflow: 'hidden'
-                }}>
-                    {review.name}
-                </h4>
+        <p style={{ color: 'var(--text-muted)', fontStyle: 'italic', marginBottom: 'var(--spacing-md)', lineHeight: '1.6' }}>
+            "{review.text}"
+        </p>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'end' }}>
+            <div>
+                <h4 style={{ fontWeight: '700', color: 'var(--text-main)' }}>{review.name}</h4>
+                <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{review.role}</span>
             </div>
-            <div style={{ display: 'flex' }}>
-                <Star size={12} fill="gold" color="gold" />
-                <span style={{ fontSize: '0.75rem', fontWeight: 'bold', marginLeft: '2px', color: 'var(--text-main)' }}>{review.rating}.0</span>
+            <div style={{ display: 'flex', gap: '2px' }}>
+                {[...Array(review.rating)].map((_, i) => (
+                    <Star key={i} size={16} fill="gold" color="gold" />
+                ))}
             </div>
         </div>
     </div>
