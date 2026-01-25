@@ -269,16 +269,16 @@ const Products = () => {
                                     }
                                     .container > div > div > div > div:first-child {
                                         height: 120px !important;
-                                        margin-bottom: 10px !important;
+                                        margin-bottom: 6px !important;
                                     }
                                     .container > div > div > div h3 {
                                         font-size: 1rem !important;
-                                        margin-bottom: 8px !important;
+                                        margin-bottom: 4px !important;
                                     }
                                     .container > div > div > div p {
                                         font-size: 0.8rem !important;
                                         line-height: 1.4 !important;
-                                        margin-bottom: 8px !important;
+                                        margin-bottom: 6px !important;
                                     }
                                 }
                             `}</style>
