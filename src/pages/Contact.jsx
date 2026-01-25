@@ -63,7 +63,7 @@ const Contact = () => {
                             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', marginBottom: '10px' }}>
                                 <a href="tel:8080055955" className="hover:text-primary">8080055955</a>
                             </p>
-                            <Button variant="outline" onClick={() => window.open('https://wa.me/918080055955')}>Chat on WhatsApp</Button>
+                            <Button variant="whatsapp" onClick={() => window.open('https://wa.me/918080055955')}>Chat on WhatsApp</Button>
                         </div>
 
                         <div className="glass-panel" style={{ padding: '20px', textAlign: 'center' }}>

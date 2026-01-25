@@ -29,6 +29,11 @@ const Button = ({ children, to, onClick, variant = 'primary', className = '', ..
             borderColor: 'var(--primary-color)',
             color: 'var(--primary-color)'
         },
+        whatsapp: {
+            background: '#25D366',
+            borderColor: '#25D366',
+            color: '#fff'
+        },
         glass: {
             background: 'var(--glass-bg)',
             backdropFilter: 'blur(10px)',
