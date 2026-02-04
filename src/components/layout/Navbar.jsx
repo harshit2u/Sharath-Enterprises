@@ -83,7 +83,7 @@ const Navbar = () => {
             </div>
 
             {/* CTA Button (Desktop) */}
-            <a href="tel:8080055955" className='desktop-cta' style={{
+            <a href="tel:9892775134" className='desktop-cta' style={{
                 background: 'linear-gradient(90deg, var(--primary-color), var(--secondary-color))',
                 padding: '10px 20px',
                 borderRadius: 'var(--radius-full)',
@@ -157,7 +157,7 @@ const Navbar = () => {
                                 {link.name}
                             </Link>
                         ))}
-                        <a href="tel:8080055955" style={{
+                        <a href="tel:9892775134" style={{
                             background: 'var(--primary-color)',
                             color: '#fff',
                             padding: '15px 40px',

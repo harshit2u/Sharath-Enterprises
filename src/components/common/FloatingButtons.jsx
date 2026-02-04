@@ -7,7 +7,7 @@ const FloatingButtons = () => {
         <div style={{ position: 'fixed', bottom: '20px', left: '20px', zIndex: 999, display: 'flex', flexDirection: 'column', gap: '10px' }}>
             {/* WhatsApp */}
             <motion.a
-                href="https://wa.me/918080055955"
+                href="https://wa.me/919892775134?text=Hello..."
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
@@ -38,7 +38,7 @@ const FloatingButtons = () => {
                 }
              `}</style>
             <motion.a
-                href="tel:8080055955"
+                href="tel:9892775134"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="floating-call"

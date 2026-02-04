@@ -1,4 +1,9 @@
 export const products = [
+    // Superlon
+    { id: '34', name: 'Superlon Insulation Sheet', category: 'insulation', image: '', description: 'Flexible foam insulation sheet for ducts.' },
+    { id: '35', name: 'Superlon Tubing', category: 'insulation', image: '', description: 'Thermal insulation tubing for copper pipes.' },
+
+
     // Copper Pipes
     { id: '1', name: 'Copper Pipe 1/4" (50ft)', category: 'copper', image: '', description: 'Premium grade copper coil for AC installation.' },
     { id: '2', name: 'Copper Pipe 1/2" (50ft)', category: 'copper', image: '', description: 'Seamless copper tube for high pressure applications.' },
@@ -23,6 +28,7 @@ export const products = [
     // Insulation
     { id: '14', name: 'Nitrile Insulation Tube 1/4"', category: 'insulation', image: '', description: 'Black foam insulation for thermal efficiency.' },
     { id: '15', name: 'Nitrile Insulation Tube 1/2"', category: 'insulation', image: '', description: 'Prevents condensation on suction lines.' },
+
     { id: '16', name: 'PVC Tape White', category: 'insulation', image: '', description: 'Non-adhesive PVC tape for wrapping.' },
 
     // Gas

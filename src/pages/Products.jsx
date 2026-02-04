@@ -18,8 +18,17 @@ import productWires from '../assets/images/product_wires.png';
 import productTape from '../assets/images/product_tape.png';
 import productBracket from '../assets/images/product_bracket.png';
 import productPcb from '../assets/images/product_pcb.png';
+import productSuperlon from '../assets/images/product_superlon.png';
 
 const productSections = [
+    {
+        id: 'superlon',
+        category: 'insulation',
+        title: "Superlon Thermal Insulation",
+        description: "High-quality closed-cell engineering flexible foam insulation. Ideal for HVAC/R, water pipe and ducting systems.",
+        image: productSuperlon,
+        features: ["Class 1 & Class 0", "Low Water Vapour Permeability", "Energy Saving", "Fire Retardant"]
+    },
     {
         id: 'gases',
         category: 'gases',
@@ -60,6 +69,7 @@ const productSections = [
         image: productTape, // New Image
         features: ["Strong Adhesion", "Fire Retardant", "Weather High Resistant", "Flexible"]
     },
+
     {
         id: 'brackets',
         category: 'accessories',

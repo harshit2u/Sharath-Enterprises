@@ -132,7 +132,7 @@ const Hero = () => {
                     <Button to="/products">
                         View Products <ChevronRight size={18} />
                     </Button>
-                    <Button variant="outline" onClick={() => window.open('https://wa.me/918080055955', '_blank')}>
+                    <Button variant="outline" onClick={() => window.open('https://wa.me/919892775134?text=Hello...', '_blank')}>
                         WhatsApp Enquiry <MessageCircle size={18} />
                     </Button>
                 </motion.div>
