@@ -31,7 +31,9 @@ const Footer = () => {
                     <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: 'var(--spacing-sm)' }}>
                         <ContactItem icon={<MapPin size={18} />} text="Shop No 19, Vijaya House, Station Road, Vikhroli (W), Mumbai - 400083" />
                         <ContactItem icon={<Phone size={18} />} text="+91 9892775134" isLink href="tel:9892775134" />
-                        <ContactItem icon={<MessageCircle size={18} />} text="WhatsApp Chat" isLink href="https://wa.me/919892775134?text=Hello..." />
+                        <ContactItem icon={<Phone size={18} />} text="+91 8080055955" isLink href="tel:8080055955" />
+                        <ContactItem icon={<MessageCircle size={18} />} text="WhatsApp (9892775134)" isLink href="https://wa.me/919892775134?text=Hello..." />
+                        <ContactItem icon={<MessageCircle size={18} />} text="WhatsApp (8080055955)" isLink href="https://wa.me/918080055955?text=Hello..." />
                         <ContactItem icon={<Clock size={18} />} text="Everyday: 9:00 AM - 9:00 PM" />
                     </ul>
                 </div>

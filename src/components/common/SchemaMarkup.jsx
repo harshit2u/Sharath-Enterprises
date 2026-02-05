@@ -7,7 +7,7 @@ const SchemaMarkup = () => {
         "@type": "LocalBusiness",
         "name": "Sharath Enterprises",
         "image": "",
-        "telephone": "+919892775134",
+        "telephone": ["+919892775134", "+918080055955"],
         "email": "",
         "address": {
             "@type": "PostalAddress",

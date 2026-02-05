@@ -3,9 +3,10 @@ import { Phone, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const FloatingButtons = () => {
+    // Primary contact: 9892775134, Secondary: 8080055955 (Both available in Contact page & Footer)
     return (
         <div style={{ position: 'fixed', bottom: '20px', left: '20px', zIndex: 999, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            {/* WhatsApp */}
+            {/* WhatsApp - Primary Number */}
             <motion.a
                 href="https://wa.me/919892775134?text=Hello..."
                 target="_blank"

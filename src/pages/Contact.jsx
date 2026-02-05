@@ -61,10 +61,20 @@ const Contact = () => {
                                 <Phone size={32} color="var(--primary-color)" />
                             </div>
                             <h3 style={{ marginBottom: '10px', color: 'var(--text-main)' }}>Call Us</h3>
-                            <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', marginBottom: '10px' }}>
-                                <a href="tel:9892775134" className="hover:text-primary">9892775134</a>
-                            </p>
-                            <Button variant="whatsapp" onClick={() => window.open('https://wa.me/919892775134?text=Hello...')}>Chat on WhatsApp</Button>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                                <div>
+                                    <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', marginBottom: '8px' }}>
+                                        <a href="tel:9892775134" className="hover:text-primary">9892775134</a>
+                                    </p>
+                                    <Button variant="whatsapp" onClick={() => window.open('https://wa.me/919892775134?text=Hello...')}>Chat on WhatsApp</Button>
+                                </div>
+                                <div>
+                                    <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', marginBottom: '8px' }}>
+                                        <a href="tel:8080055955" className="hover:text-primary">8080055955</a>
+                                    </p>
+                                    <Button variant="whatsapp" onClick={() => window.open('https://wa.me/918080055955?text=Hello...')}>Chat on WhatsApp</Button>
+                                </div>
+                            </div>
                         </div>
 
                         <div className="glass-panel" style={{ padding: '20px', textAlign: 'center' }}>
