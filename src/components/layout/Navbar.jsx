@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, ShoppingBag } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion as Motion, AnimatePresence } from 'framer-motion';
 
 
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/logo.webp';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -44,8 +44,16 @@ const Navbar = () => {
             borderRadius: 'var(--radius-lg)'
         }}>
             {/* Logo */}
-            <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={logo} alt="Sharath Enterprises" style={{ height: '60px', width: 'auto' }} />
+            <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <img src={logo} alt="Sharath Enterprises" style={{ height: '50px', width: 'auto' }} />
+                <span style={{
+                    fontSize: '1.4rem',
+                    fontWeight: '700',
+                    color: 'var(--text-main)',
+                    letterSpacing: '-0.5px'
+                }}>
+                    Sharath Enterprises
+                </span>
             </Link>
 
             {/* Desktop Links */}
@@ -63,11 +71,11 @@ const Navbar = () => {
                             borderRadius: 'var(--radius-full)'
                         }}
                     >
-                        <motion.span whileHover={{ scale: 1.05 }} style={{ display: 'inline-block' }}>
+                        <Motion.span whileHover={{ scale: 1.05 }} style={{ display: 'inline-block' }}>
                             {link.name}
-                        </motion.span>
+                        </Motion.span>
                         {location.pathname === link.path && (
-                            <motion.div
+                            <Motion.div
                                 layoutId="activeNav"
                                 style={{
                                     position: 'absolute',
@@ -106,7 +114,7 @@ const Navbar = () => {
             {/* Mobile Menu */}
             <AnimatePresence>
                 {isOpen && (
-                    <motion.div
+                    <Motion.div
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
@@ -172,7 +180,7 @@ const Navbar = () => {
                         }}>
                             <Phone size={24} /> Call Now
                         </a>
-                    </motion.div>
+                    </Motion.div>
                 )}
             </AnimatePresence>
 

@@ -4,23 +4,31 @@ import { Helmet } from 'react-helmet-async';
 import Section from '../components/common/Section';
 import { useLocation } from 'react-router-dom';
 import Testimonials from '../components/sections/Testimonials';
-import productCompressor from '../assets/images/product_compressor.png';
-import productCopper from '../assets/images/product_copper.png';
-import productTools from '../assets/images/product_tools.png';
-import productFasteners from '../assets/images/product_fasteners.png';
-import productMotor from '../assets/images/product_motor.png';
-import productGas from '../assets/images/product_gas.png';
-import productCapacitor from '../assets/images/product_capacitor.png';
-import productValve from '../assets/images/product_valve.png';
-import productInsulation from '../assets/images/product_insulation.png';
+import productCompressor from '../assets/images/product_compressor.webp';
+import productCopper from '../assets/images/product_copper.webp';
+import productTools from '../assets/images/product_tools.webp';
+import productMotor from '../assets/images/product_motor.webp';
+import productGas from '../assets/images/product_gas.webp';
+import productCapacitor from '../assets/images/product_capacitor.webp';
+import productValve from '../assets/images/product_valve.webp';
 // New Generated Images
-import productWires from '../assets/images/product_wires.png';
-import productTape from '../assets/images/product_tape.png';
-import productBracket from '../assets/images/product_bracket.png';
-import productPcb from '../assets/images/product_pcb.png';
-import productSuperlon from '../assets/images/product_superlon.png';
+import productWires from '../assets/images/product_wires.webp';
+import productTape from '../assets/images/product_tape.webp';
+import productBracket from '../assets/images/product_bracket.webp';
+import productPcb from '../assets/images/product_pcb.webp';
+import productSuperlon from '../assets/images/product_superlon.webp';
+// New Generated Images
+import productAcSplit from '../assets/images/product_ac_split.webp';
 
 const productSections = [
+    {
+        id: 'ac-split',
+        category: 'ac-units',
+        title: "Split & Window Air Conditioners",
+        description: "Leading brands inclusive of Daikin, Mitsubishi, LG, Samsung, Voltas, Godrej, and more. We provide a complete range of energy-efficient split and window AC solutions.",
+        image: productAcSplit,
+        features: ["Multi-Brand Available", "All Star Ratings", "Copper Condenser", "Installation Services"]
+    },
     {
         id: 'superlon',
         category: 'insulation',

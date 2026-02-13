@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapPin, Phone, MessageCircle, Clock, Facebook, Instagram, Twitter } from 'lucide-react';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/logo.webp';
 
 const Footer = () => {
     return (

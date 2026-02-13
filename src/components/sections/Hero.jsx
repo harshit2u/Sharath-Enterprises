@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Button from '../common/Button';
 import { ChevronRight, Phone, MessageCircle } from 'lucide-react';
-import heroBg from '../../assets/images/hero_bg_subtle.png';
+import heroBg from '../../assets/images/hero_bg_subtle.webp';
 
 const Hero = () => {
     return (
