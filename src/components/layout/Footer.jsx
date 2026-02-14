@@ -41,14 +41,14 @@ const Footer = () => {
                 {/* Map */}
                 <div style={{ borderRadius: 'var(--radius-lg)', overflow: 'hidden', height: '250px' }}>
                     <iframe
-                        src="https://maps.google.com/maps?q=Sharath+Enterprises+Station+Road+Vikhroli+West+Mumbai&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        src="https://maps.google.com/maps?q=Sharath+Enterprises+Shop+No+19+Vijaya+House+Station+Road+Vikhroli+West+Mumbai+400083&t=&z=15&ie=UTF8&iwloc=&output=embed"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
                         allowFullScreen=""
                         loading="lazy"
                     ></iframe>
-                    <a href="https://goo.gl/maps/XYZ" target="_blank" rel="noopener noreferrer" style={{
+                    <a href="https://www.google.com/maps/search/?api=1&query=Sharath+Enterprises+Shop+No+19+Vijaya+House+Station+Road+Vikhroli+West+Mumbai+400083" target="_blank" rel="noopener noreferrer" style={{
                         display: 'block',
                         textAlign: 'center',
                         background: 'var(--bg-card)',
